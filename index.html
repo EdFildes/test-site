@@ -24,19 +24,11 @@
 <script>
   const video = document.getElementById('video');
   const videoSrc = 'https://stream.mux.com/02JLr01muAufyNxX99FN01kzbIDRWdHtYHCxYdtP62IkdU.m3u8';
-  //
-  // Only use native HLS in browsers with ManagedMediaSource (e.g. modern Safari)
-  // where native playback is well-supported. Other browsers may report HLS support
-  // via canPlayType but fail to play certain streams reliably.
-  //
   if (
     video.canPlayType('application/vnd.apple.mpegurl') &&
     'ManagedMediaSource' in window
   ) {
     video.src = videoSrc;
-    //
-    // If not using native HLS, check if HLS.js is supported
-    //
   } else if (Hls.isSupported()) {
     const hls = new Hls();
     hls.loadSource(videoSrc);
