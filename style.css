@@ -30,7 +30,7 @@ body {
     mix-blend-mode: difference;
     position: fixed;
     width: 20vw;
-
+    min-width: 200px;
     padding: 2.5rem 2.5rem;
 }
 
