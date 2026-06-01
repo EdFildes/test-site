@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Two</title>
+  <meta name="description" content="Full-service post-production studio delivering high-quality, scalable content. From editing and colour grading to motion graphics, VFX, 3D and audio, we manage the full pipeline with speed, consistency and creative precision." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+  <script type="text/javascript" src="main.js" ></script>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+    HERO
+═══════════════════════════════════════════ -->
+<section id="hero">
+
+<video id="video" autoplay muted loop playsinline preload="auto"></video>
+<script>
+  const video = document.getElementById('video');
+  const videoSrc = 'https://stream.mux.com/02JLr01muAufyNxX99FN01kzbIDRWdHtYHCxYdtP62IkdU.m3u8';
+  //
+  // Only use native HLS in browsers with ManagedMediaSource (e.g. modern Safari)
+  // where native playback is well-supported. Other browsers may report HLS support
+  // via canPlayType but fail to play certain streams reliably.
+  //
+  if (
+    video.canPlayType('application/vnd.apple.mpegurl') &&
+    'ManagedMediaSource' in window
+  ) {
+    video.src = videoSrc;
+    //
+    // If not using native HLS, check if HLS.js is supported
+    //
+  } else if (Hls.isSupported()) {
+    const hls = new Hls();
+    hls.loadSource(videoSrc);
+    hls.attachMedia(video);
+  }
+</script>
+
+<!-- NAV -->
+<img src="assets/img/logo.png" class="logo text-white">STUDIO<br>TWO</div>
+
+<!-- SCROLL HINT -->
+<div class="scroll-hint">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+    ABOUT
+═══════════════════════════════════════════ -->
+<section id="about" class="py-28 px-6 md:px-16">
+<div class="mx-auto text-center">
+    <p class="label reveal">About Us</p>
+    <h1 class="display text-5xl md:text-7xl mt-4 mb-8 reveal reveal-delay-1">
+    Built for modern<br>post-production
+    </h1>
+    <p class="text-sm leading-relaxed text-[#444] max-w-sm mx-auto reveal reveal-delay-2">
+    Shaped by two minds and one shared vision, we specialise in brand storytelling that connects, inspires and endures. We bring a considered, collaborative approach to every project, backed by experience delivering global campaigns and social-first content for some of the world's leading brands.
+    </p>
+</div>
+</section>
+
+<!-- ABOUT VIDEO -->
+<div class="w-full aspect-[16/7] overflow-hidden reveal">
+<video autoplay muted loop playsinline class="w-full h-full object-cover">
+    <source src="https://framerusercontent.com/assets/RQlDPN2o7RlMOyqmcVri7CUjg.mp4" type="video/mp4" />
+</video>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+    SERVICES
+═══════════════════════════════════════════ -->
+<section id="services" class="py-28 px-6 md:px-16">
+<div class="max-w-2xl mx-auto">
+    <div class="text-center mb-12">
+    <p class="label reveal">Services(02)</p>
+    <h2 class="display text-5xl md:text-7xl mt-4 reveal reveal-delay-1">
+        Where vision<br>meets precision
+    </h2>
+    </div>
+
+    <div class="mt-10 reveal reveal-delay-2">
+    <div class="service-item"><span class="service-num">(01)</span><span class="service-name">Editing &amp; Finishing</span></div>
+    <div class="service-item"><span class="service-num">(02)</span><span class="service-name">Colour Grading</span></div>
+    <div class="service-item"><span class="service-num">(03)</span><span class="service-name">Motion Design (2D)</span></div>
+    <div class="service-item"><span class="service-num">(04)</span><span class="service-name">3D &amp; CGI</span></div>
+    <div class="service-item"><span class="service-num">(05)</span><span class="service-name">VFX &amp; Compositing</span></div>
+    <div class="service-item"><span class="service-num">(06)</span><span class="service-name">Sound Design &amp; Audio</span></div>
+    <div class="service-item"><span class="service-num">(07)</span><span class="service-name">Mastering &amp; Delivery</span></div>
+    <div class="service-item"><span class="service-num">(08)</span><span class="service-name">Localisation</span></div>
+    <div class="service-item"><span class="service-num">(09)</span><span class="service-name">Content Creation</span></div>
+    <div class="service-item"><span class="service-num">(10)</span><span class="service-name">Platform Optimisation</span></div>
+    <div class="service-item"><span class="service-num">(11)</span><span class="service-name">Production</span></div>
+    </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+    CLIENTS
+═══════════════════════════════════════════ -->
+<section id="clients" class="py-20 border-t border-b border-[#ddd]">
+<div class="px-6 md:px-16 mb-10 text-center">
+    <p class="label reveal">Clients We've Worked With(03)</p>
+</div>
+
+<!-- Marquee -->
+<div class="overflow-hidden py-4 reveal">
+    <div class="marquee-track" id="marquee">
+    <!-- set 1 -->
+    <span class="client-name">Fantastic</span>
+    <span class="client-name">M&amp;S</span>
+    <span class="client-name">Matalan</span>
+    <span class="client-name serif">mondottica</span>
+    <span class="client-name">M&amp;M</span>
+    <span class="client-name">Lvnea</span>
+    <span class="client-name">Next</span>
+    <span class="client-name serif">Elemis</span>
+    <span class="client-name">PrettyLittleThing</span>
+    <span class="client-name">Boohoo</span>
+    <span class="client-name">Studio Two</span>
+    <!-- set 2 (duplicate for seamless loop) -->
+    <span class="client-name">Fantastic</span>
+    <span class="client-name">M&amp;S</span>
+    <span class="client-name">Matalan</span>
+    <span class="client-name serif">mondottica</span>
+    <span class="client-name">M&amp;M</span>
+    <span class="client-name">Lvnea</span>
+    <span class="client-name">Next</span>
+    <span class="client-name serif">Elemis</span>
+    <span class="client-name">PrettyLittleThing</span>
+    <span class="client-name">Boohoo</span>
+    <span class="client-name">Studio Two</span>
+    </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+    CONTACT
+═══════════════════════════════════════════ -->
+<section id="contact" class="py-28 px-6 md:px-16">
+<div class="max-w-5xl mx-auto">
+
+    <!-- heading -->
+    <div class="mb-16">
+    <p class="label" style="color:rgba(255,255,255,0.4);">Contact (04)</p>
+    <h2 class="display text-6xl md:text-8xl mt-3 text-white reveal">Let's Connect</h2>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+
+    <!-- LEFT: video + bubble -->
+    <div class="contact-video-wrap reveal">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+        <source src="https://framerusercontent.com/assets/8OIFKIdy1tovl1F1Tqlzn2CyHQ8.mp4" type="video/mp4" />
+        </video>
+        <div class="contact-bubble">
+        <div class="bubble-ring">
+            <span class="get-in-touch">Get in touch</span>
+            <span class="email">info@studiotwocreative.com</span>
+            <span class="addr">Ancoats<br>Manchester<br>M4 6BD</span>
+        </div>
+        </div>
+    </div>
+
+    <!-- RIGHT: form -->
+    <div class="flex flex-col gap-7 reveal reveal-delay-2">
+        <div class="form-field">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-input" placeholder="" />
+        </div>
+
+        <div class="form-field">
+        <label class="form-label">Service</label>
+        <select class="form-select">
+            <option value="">Select…</option>
+            <option>Editing &amp; Finishing</option>
+            <option>Colour Grading</option>
+            <option>Creative Direction</option>
+            <option>3D &amp; CGI</option>
+            <option>VFX &amp; Compositing</option>
+            <option>Sound Design &amp; Audio</option>
+            <option>Mastering &amp; Delivery</option>
+            <option>Everything else</option>
+        </select>
+        </div>
+
+        <div class="form-field">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-input" />
+        </div>
+
+        <div class="form-field">
+        <label class="form-label">Additional Information</label>
+        <textarea class="form-textarea"></textarea>
+        </div>
+
+        <button class="btn-send" onclick="handleSend(event)">Send</button>
+    </div>
+
+    </div>
+</div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+    FOOTER
+═══════════════════════════════════════════ -->
+<footer class="py-8 px-6 md:px-16">
+<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+    <div class="logo text-white text-xs">STUDIO<br>TWO</div>
+    <p class="text-xs text-[rgba(255,255,255,0.3)] tracking-widest uppercase">© 2024 Studio Two Creative</p>
+    <a href="mailto:info@studiotwocreative.com" class="text-xs text-[rgba(255,255,255,0.3)] tracking-widest hover:text-white transition-colors">
+    info@studiotwocreative.com
+    </a>
+</div>
+</footer>
+</body>
+</html>
